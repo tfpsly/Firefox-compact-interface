@@ -2,4 +2,4 @@ Firefox userChrome.css that gives a very compact interface, with addons, bookmar
 
 Screenshot:
 
-[Alt text](/Firefox_compact_interface_example.jpg?raw=true "Compact Firefox interface example")
+[Alt text](/Firefox_compact_interface_example.png?raw=true "Compact Firefox interface example")
