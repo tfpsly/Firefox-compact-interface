@@ -1,0 +1,87 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*Hide Close Button until hovered*/
+.close-icon{
+  transform:scale(1,1)!important;
+  transition:opacity 250ms var(--animation-easing-function),
+  margin-left 250ms var(--animation-easing-function),
+  transform var(--animation-easing-function),
+  visibility 0ms 25ms!important;
+}
+.tabbrowser-tab:not(:hover) .close-icon{
+  opacity: 0!important;
+  margin-left:calc((-20px * .9) + 2px)!important;
+  transform:scale(.9,.9)!important;
+}
+
+/* Hide back and forth history buttons */
+#back-button, #forward-button { display: none !important; }
+
+/* Tab height and font */
+.tab-text {
+  font-size: 10px !important;
+}
+#tabbrowser-tabs {
+  /* 18px seems to be the lower bound */
+  --tab-min-height: 18px !important;
+  --tab-max-height: 18px !important;
+  height: 18px !important;
+  margin-top:15px !important;
+}
+
+/* Address bar - higher and 50% transparent */
+#urlbar {
+  z-index: 1000 !important;
+  font-size: 10px !important;
+    min-width:200px!important;
+  padding: 0px !important;
+}
+
+#nav-bar {
+  padding: 0px !important;
+  border-top: none !important;
+  /* background-color: none !important;
+  background-image: none !important; */
+  position: fixed !important;
+  height: 20px !important;
+  /* opacity: 0.75 !important; */
+  margin-left: 220px !important;
+  margin-top: -5px !important;
+  /* The bottom of the navbar derminers the top of the page.
+   Set margin-bottom to allow space for tabs. */
+  margin-bottom: 6px !important;
+  /* height: 20px !important; Creates a Z order issue */
+  padding: 0px !important;
+  z-index: 1000 !important;
+}
+
+#nav-bar::hover  {
+  opacity: 1.0;
+}
+#nav-bar:focus {
+  opacity: 1.0 !important;
+}
+
+#main-window #urlbar-container {
+  height: 22px !important;
+  z-index: 1000 !important;
+}
+
+/*Unfocused window*/
+#tabbrowser-tabs:-moz-window-inactive {
+  opacity: 0.5 !important;
+  background-color: #666666;
+}
+
+#nav-bar:-moz-window-inactive {
+  background-color: #666666;
+  opacity: 0.5 !important;
+}
+
+.bookmark-item:-moz-window-inactive {
+  /* Different bgcolor due to full opacity */
+  background-color: #e3e3e3;
+}
+
+/*Thinner scrollbars*/
+*{ scrollbar-color: auto !important; scrollbar-width: 5px !important; }
